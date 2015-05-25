@@ -1,0 +1,1 @@
+<div class="alert alert-success">Item #<?php echo html_escape($item->item_id); ?> created!</div>

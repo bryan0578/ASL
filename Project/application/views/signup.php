@@ -1,55 +1,105 @@
-<?php include('header.php'); ?>
-<?php include('signin.php'); ?>
+
+<?php $this->load->helper('form','url');?>
+<?php echo validation_errors(); ?>
+<?php
+
+$attributes = array('class' => 'form-horizontal');
+
+$labelClass = array('class' => 'col-md-4 control-label');
+
+
+$name = array('name' => 'name',
+                   'id' => 'name',
+                   'placeholder' => 'Jon Doe',
+                   'class' => 'form-control input-md');
+
+$username = array('name' => 'username',
+                   'id' => 'username',
+                   'placeholder' => 'Jon123',
+                   'class' => 'form-control input-md');
+
+$email = array('name' => 'email',
+                   'id' => 'email',
+                   'placeholder' => 'jon@email.com',
+                   'class' => 'form-control input-md');
+
+$email = array('name' => 'email',
+                   'id' => 'email',
+                   'placeholder' => 'jon@email.com',
+                   'class' => 'form-control input-md');
+
+$password = array('name' => 'password',
+                   'id' => 'password',
+                   'placeholder' => '',
+                   'class' => 'form-control input-md');
+
+$confpassword = array('name' => 'confpass',
+                   'id' => 'confpass',
+                   'placeholder' => '',
+                   'class' => 'form-control input-md');
+
+
+$button = array('name' => 'button',
+                'id' => 'button',
+                'class' => 'btn btn-primary',
+                'value' => 'true',
+                'type' => 'submit',
+                'content' => 'Submit'
+);
+
+
+
+?>
 
 <div class="center_form">
-  <form class="form-horizontal" action="Project/welcome/inventory" method="POST">
+  <?php echo form_open('welcome',$attributes);?>
     <fieldset>
 
-<!-- Form Name -->
+
       <legend>Sign Up</legend>
 
-  <!-- Text input-->
       <div class="form-group">
-        <label class="col-md-4 control-label" for="name">Name</label>  
+        <?php echo form_label('Name', 'name', $labelClass);?> 
           <div class="col-md-8">
-            <input id="name" name="name" type="text" placeholder="Jon Doe" class="form-control input-md" required=""> 
+            <?php echo form_input($name);?>
           </div>
         </div>
 
-  <!-- Text input-->
       <div class="form-group">
-        <label class="col-md-4 control-label" for="username">Username</label>  
+        <?php echo form_label('Username', 'username', $labelClass);?>  
           <div class="col-md-8">
-            <input id="username" name="username" type="text" placeholder="jon123" class="form-control input-md" required="">  
+            <?php echo form_input($username);?> 
          </div>
       </div>
 
-  <!-- Text input-->
+ 
       <div class="form-group">
-        <label class="col-md-4 control-label" for="email">Email</label>  
+        <?php echo form_label('Email', 'email', $labelClass);?>  
           <div class="col-md-8">
-            <input id="email" name="email" type="text" placeholder="jon@email.com" class="form-control input-md" required=""> 
+            <?php echo form_input($email);?>  
           </div>
       </div>
 
-  <!-- Password input-->
+ 
       <div class="form-group">
-        <label class="col-md-4 control-label" for="passwordinput">Password</label>
+        <?php echo form_label('Password', 'password', $labelClass);?>
           <div class="col-md-8">
-            <input id="passwordinput" name="passwordinput" type="password" placeholder="" class="form-control input-md" required=""> 
+            <?php echo form_password($password);?> 
           </div>
       </div>
 
-  <!-- Button -->
+  
       <div class="form-group">
         <label class="col-md-4 control-label" for="button"></label>
           <div class="col-md-4">
-            <button id="button" name="button" class="btn btn-primary">Submit</button>
+            <?php echo form_submit('submit','Submit');?>
           </div>
       </div>
 
     </fieldset>
   </form>
 </div>
+
+
 
 <?php include('footer.php'); ?>

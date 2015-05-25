@@ -1,30 +1,31 @@
-<?php include('header.php');?>
-
-
-<table class="table">
-    <thead>
-        <tr>
-            <th>Id</th>
-            <th>Item Name</th>
-            <th>Price</th>
-            <th>Sale Price</th>
-            <th>In Stock</th>
-        </tr>
-    </thead>
-    <tbody>
-     
-        	
-
+<h2>Items in Inventory</h2>
+<div class="table-responsive">
 <?php
-	
-	foreach ($items as $item) {
-		echo "<tr><td>".$item->id."</td><td>". $item->name."</td><td>".$item->price."</td><td>".$item->sale_price."</td><td>".$item->stock."</td></tr>";
-	}
+$tmpl = array (
+                    'table_open'          => '<table class="table table-hover">',
 
+                    'heading_row_start'   => '<tr>',
+                    'heading_row_end'     => '</tr>',
+                    'heading_cell_start'  => '<th>',
+                    'heading_cell_end'    => '</th>',
+
+                    'row_start'           => '<tr>',
+                    'row_end'             => '</tr>',
+                    'cell_start'          => '<td>',
+                    'cell_end'            => '</td>',
+
+                    'row_alt_start'       => '<tr>',
+                    'row_alt_end'         => '</tr>',
+                    'cell_alt_start'      => '<td>',
+                    'cell_alt_end'        => '</td>',
+
+                    'table_close'         => '</table>'
+              );
+
+$this->table->set_template($tmpl);
+$this->table->set_heading('Name', 'Price', 'Sale Price', 'Stock', 'Actions');
+echo $this->table->generate($inventory);
 ?>
-       
-    </tbody>
-</table>
+</div>
 
 
-<?php include('footer.php');?>
