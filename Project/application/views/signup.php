@@ -1,5 +1,4 @@
 
-<?php $this->load->helper('form','url');?>
 <?php echo validation_errors(); ?>
 <?php
 
@@ -33,8 +32,8 @@ $password = array('name' => 'password',
                    'placeholder' => '',
                    'class' => 'form-control input-md');
 
-$confpassword = array('name' => 'confpass',
-                   'id' => 'confpass',
+$confpassword = array('name' => 'confpassword',
+                   'id' => 'confpassword',
                    'placeholder' => '',
                    'class' => 'form-control input-md');
 
@@ -44,15 +43,23 @@ $button = array('name' => 'button',
                 'class' => 'btn btn-primary',
                 'value' => 'true',
                 'type' => 'submit',
-                'content' => 'Submit'
+                
 );
 
 
 
 ?>
 
+<?php echo form_open('welcome/signin');?>
+<div class="form-group" id="member">
+     <label class="col-md-4 control-label" for="signin">Already a member?</label>
+     <div class="col-md-4">
+          <button id="button3" name="button" class="btn btn-primary">SignIn</button>
+     </div>
+</div>
+<?php echo form_close(); ?><br/>
 <div class="center_form">
-  <?php echo form_open('welcome',$attributes);?>
+  <?php echo form_open('welcome/registration',$attributes);?>
     <fieldset>
 
 
@@ -88,13 +95,20 @@ $button = array('name' => 'button',
           </div>
       </div>
 
-  
       <div class="form-group">
-        <label class="col-md-4 control-label" for="button"></label>
-          <div class="col-md-4">
-            <?php echo form_submit('submit','Submit');?>
+        <?php echo form_label('Confirm Password', 'confpassword', $labelClass);?>
+          <div class="col-md-8">
+            <?php echo form_password($confpassword);?> 
           </div>
       </div>
+
+  
+      <div class="form-group">
+      <label class="col-md-4 control-label" for="button"></label>
+          <div class="col-md-4">
+            <button id="button1" name="button" class="btn btn-primary">Submit</button>
+          </div>
+    </div>
 
     </fieldset>
   </form>

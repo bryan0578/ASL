@@ -8,7 +8,7 @@
 	<title>Welcome</title>
 <body>
 	<div class="header">
-		<h1>Your Inventory</h1>
+		<h1>Inventory Collections</h1>
 	</div>
 	<div class="container">
 		

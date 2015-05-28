@@ -6,7 +6,7 @@ $labelClass = array('class' => 'col-md-4 control-label');
 $class = array('class' => 'control-label', );
 
 $username = array('name' => 'username',
-                   'id' => 'usernamename',
+                   'id' => 'username',
                    'class' => 'form-control input-md');
 
 $password = array('name' => 'password',
@@ -16,7 +16,7 @@ $password = array('name' => 'password',
 ?>
 <div class="signin">
   <h3>Sign In</h3>
-	<?php echo form_open('welcome/view',$attributes);?>
+	<?php echo form_open('welcome/login',$attributes);?>
 	  	<div class="form-group">
         <?php echo form_label('Username', 'username', $labelClass);?> 
           <div class="col-md-8">
@@ -32,10 +32,10 @@ $password = array('name' => 'password',
 	  	<div class="form-group">
 	 		<label class="col-md-4 control-label" for="button"></label>
 	  			<div class="col-md-4">
-	    			<button id="button" name="button" class="btn btn-primary">Sign In</button>
+	    			<button id="button1" name="button" class="btn btn-primary">Sign In</button>
 	  			</div>
           <p>Not a member?</p>
-          <a href="welcome/register">Register Here</a>
+          <a href="welcome/registration">Register Here</a>
 		</div>
 	</form>
 </div>

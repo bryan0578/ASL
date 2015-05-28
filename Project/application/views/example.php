@@ -3,6 +3,7 @@
 <head>
 	<meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <?php 
 foreach($css_files as $file): ?>
 	<link type="text/css" rel="stylesheet" href="<?php echo $file; ?>" />
@@ -11,31 +12,35 @@ foreach($css_files as $file): ?>
 	<script src="<?php echo $file; ?>"></script>
 <?php endforeach; ?>
 <style type='text/css'>
-body
-{
+body{
 	font-family: Arial;
 	font-size: 14px;
 }
-a {
+a{
     color: blue;
     text-decoration: none;
-    font-size: 14px;
+    font-size: 22px;
 }
-a:hover
-{
-	text-decoration: underline;
+a:hover{
+	text-decoration: none;
+	color:red;
+}
+.header{
+	padding:5px;
+	background-color:#353535;
+	color:#fff;
+	width:100%;
+	text-align: center;
 }
 </style>
 </head>
 <body>
+<div class='header'>
+	<center><h1>Inventory Collections</h1></center>
+</div>
 	<div>
-		<a href='<?php echo site_url('examples/customers_management')?>'>Customers</a> |
-		<a href='<?php echo site_url('examples/orders_management')?>'>Orders</a> |
-		<a href='<?php echo site_url('examples/products_management')?>'>Products</a> |
-		<a href='<?php echo site_url('examples/offices_management')?>'>Offices</a> | 
-		<a href='<?php echo site_url('examples/employees_management')?>'>Employees</a> |		 
-		<a href='<?php echo site_url('examples/film_management')?>'>Films</a> |
-		<a href='<?php echo site_url('examples/multigrids')?>'>Multigrid [BETA]</a>
+		<a href='<?php echo site_url('welcome/logout')?>'>Logout</a> 
+		
 		
 	</div>
 	<div style='height:20px;'></div>  

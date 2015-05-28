@@ -1,0 +1,1 @@
+<div class="alert alert-success">Thanks for registering! Please sign in.</div>
